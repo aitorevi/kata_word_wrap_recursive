@@ -12,6 +12,7 @@ Casos de uso:
 ("world", 8) -> "world"
 ("world", 5) -> "world"
 ("world", 3) -> "wor\nld"
+("unlimited", 3) -> "unl\nimi\nted"
 ("Hello world", 5) -> "Hello\nworld"
 ("Hello world", 7) -> "Hello\nworld"
 
@@ -29,9 +30,17 @@ cuenta hasta "&", luego hasta el siguiente "&", si se pasa del ancho de columna,
  */
 
 function wrap(text: string, columnsNumber: number) {
+
     if (columnsNumber >= text.length) {
         return text
     }
+    const lineBreak = "\n"
+    const cutPoint = columnsNumber
+    const firstPartOfText = text.substring(0, cutPoint)
+    const secondPartOfText = text.substring(cutPoint)
+    const resultingText =  `${firstPartOfText}${lineBreak}${secondPartOfText}`
+    return resultingText
+
 }
 
 describe("Wrapper", () => {
@@ -46,7 +55,7 @@ describe("Wrapper", () => {
         expect(wrap("world", 5)).toBe("world")
     })
     // ("world", 3) -> "wor\nld"
-    it("add one line breaks", () => {
+    it("add a line breaks", () => {
         expect(wrap("world", 3)).toBe("wor\nld")
     })
 })
