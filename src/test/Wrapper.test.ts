@@ -37,4 +37,9 @@ describe("Wrapper", () => {
     it("does not process any text", () => {
         expect(wrap("", 4)).toBe("")
     })
+    // ("world", 8) -> "world"
+    // ("world", 5) -> "world"
+    it("does not add any line breaks", () => {
+        expect(wrap("world", 8)).toBe("world")
+    })
 })
