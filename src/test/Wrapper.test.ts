@@ -29,7 +29,9 @@ cuenta hasta "&", luego hasta el siguiente "&", si se pasa del ancho de columna,
  */
 
 function wrap(text: string, columnsNumber: number) {
-    return "";
+    if (columnsNumber >= text.length) {
+        return text
+    }
 }
 
 describe("Wrapper", () => {
