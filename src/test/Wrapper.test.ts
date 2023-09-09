@@ -58,4 +58,8 @@ describe("Wrapper", () => {
     it("add a line breaks", () => {
         expect(wrap("world", 3)).toBe("wor\nld")
     })
+    // ("unlimited", 3) -> "unl\nimi\nted"
+    it("adds more than one line break", () => {
+        expect(wrap("unlimited", 3)).toBe("unl\nimi\nted")
+    })
 })
