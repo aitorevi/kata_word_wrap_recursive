@@ -28,14 +28,14 @@ cuenta hasta "&", luego hasta el siguiente "&", si se pasa del ancho de columna,
 ("", 0) -> Throw new Error("El número de columnas no puede ser 0")
 
  */
-
+const lineBreak = "\n"
 function wrap(text: string, columnsNumber: number) {
     if (columnsNumber < text.length) {
         const firstPartOfText = text.substring(0, columnsNumber)
         const secondPartOfText = text.substring(columnsNumber)
-        const result = `${firstPartOfText}${"\n"}${secondPartOfText}`
+        const textWithLineBreaks = `${firstPartOfText}${lineBreak}${secondPartOfText}`
         columnsNumber += columnsNumber + 1
-        return wrap(result, columnsNumber)
+        return wrap(textWithLineBreaks, columnsNumber)
     }
     return text
 }
