@@ -45,4 +45,8 @@ describe("Wrapper", () => {
         expect(wrap("world", 8)).toBe("world")
         expect(wrap("world", 5)).toBe("world")
     })
+    // ("world", 3) -> "wor\nld"
+    it("add one line breaks", () => {
+        expect(wrap("world", 3)).toBe("wor\nld")
+    })
 })
