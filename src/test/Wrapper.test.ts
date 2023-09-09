@@ -28,6 +28,10 @@ cuenta hasta "&", luego hasta el siguiente "&", si se pasa del ancho de columna,
 
  */
 
+function wrap(text: string, columnsNumber: number) {
+    return "";
+}
+
 describe("Wrapper", () => {
     // ("", 4) -> ""
     it("does not process any text", () => {
