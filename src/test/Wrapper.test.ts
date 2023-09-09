@@ -59,4 +59,8 @@ describe("Wrapper", () => {
     it("adds more than one line break", () => {
         expect(wrap("unlimited", 3)).toBe("unl\nimi\nted")
     })
+    // ("Hello world", 5) -> "Hello\nworld"
+    it("add a line break and remove space", () => {
+        expect(wrap("Hello world", 5)).toBe("Hello\nworld")
+    })
 })
