@@ -30,17 +30,14 @@ cuenta hasta "&", luego hasta el siguiente "&", si se pasa del ancho de columna,
  */
 
 function wrap(text: string, columnsNumber: number) {
-
-    if (columnsNumber >= text.length) {
-        return text
+    if (columnsNumber < text.length) {
+        const firstPartOfText = text.substring(0, columnsNumber)
+        const secondPartOfText = text.substring(columnsNumber)
+        const result = `${firstPartOfText}${"\n"}${secondPartOfText}`
+        columnsNumber += columnsNumber + 1
+        return wrap(result, columnsNumber)
     }
-    const lineBreak = "\n"
-    const cutPoint = columnsNumber
-    const firstPartOfText = text.substring(0, cutPoint)
-    const secondPartOfText = text.substring(cutPoint)
-    const resultingText =  `${firstPartOfText}${lineBreak}${secondPartOfText}`
-    return resultingText
-
+    return text
 }
 
 describe("Wrapper", () => {
