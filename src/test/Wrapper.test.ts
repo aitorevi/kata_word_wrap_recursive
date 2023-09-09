@@ -32,7 +32,7 @@ const lineBreak = "\n"
 function wrap(text: string, columnsNumber: number) {
     if (columnsNumber < text.length) {
         const firstPartOfText = text.substring(0, columnsNumber)
-        const secondPartOfText = text.substring(columnsNumber)
+        const secondPartOfText = text.substring(columnsNumber).trim()
         const textWithLineBreaks = `${firstPartOfText}${lineBreak}${secondPartOfText}`
         columnsNumber += columnsNumber + 1
         return wrap(textWithLineBreaks, columnsNumber)
