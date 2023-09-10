@@ -46,6 +46,10 @@ function searchCutOffPoint(text: string, number: number) {
     return positionOfTheCharacterToBeReplaced;
 }
 
+function replacesBlankSpaceWithALineBreak(text: string, number: number) {
+    return "Hello\nworld";
+}
+
 describe("Wrapper", () => {
     // ("", 4) -> ""
     it("does not process any text", () => {
