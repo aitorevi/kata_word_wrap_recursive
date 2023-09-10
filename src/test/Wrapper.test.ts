@@ -84,6 +84,10 @@ describe("Wrapper", () => {
     it("has not a blank space before the line break", () => {
         expect(replacesBlankSpaceWithALineBreak("Hello world", 5)).toBe("Hello\nworld")
     })
+
+    it("has a blank space before the line break", () => {
+        expect(replacesBlankSpaceWithALineBreak("Hello world at all", 11)).toBe("Hello world\nat all")
+    })
 })
 
 // Ahora hay que cortar justo por el espacio sabiendo que la siguiente palabra cabe en el ancho de columna
