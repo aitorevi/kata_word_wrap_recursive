@@ -72,8 +72,13 @@ describe("Wrapper", () => {
         expect(wrap("Hello world", 7)).toBe("Hello\nworld")
     })
 
-    it("search cut off point when the string contains a single blank space", () => {
+    it("search cut off point when the string contains more than one blank space", () => {
         expect(searchCutOffPoint("Hello world", 7)).toBe(5)
+        expect(searchCutOffPoint("Old time", 7)).toBe(3)
+    })
+
+    it("has not a blank space before the line break", () => {
+        expect(replacesBlankSpaceWithALineBreak("Hello world", 5)).toBe("Hello\nworld")
     })
 })
 
