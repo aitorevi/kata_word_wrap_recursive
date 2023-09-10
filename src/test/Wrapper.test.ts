@@ -65,4 +65,10 @@ describe("Wrapper", () => {
         expect(wrap("Hello world", 5)).toBe("Hello\nworld")
         expect(wrap("Hello world", 7)).toBe("Hello\nworld")
     })
+
+    it("search cut off point when the string contains a single blank space", () => {
+        expect(searchCutOffPoint("Hello world", 7)).toBe(5)
+    })
 })
+
+// Ahora hay que cortar justo por el espacio sabiendo que la siguiente palabra cabe en el ancho de columna
