@@ -40,6 +40,12 @@ function wrap(text: string, columnsNumber: number) {
     return text
 }
 
+let initialPosition = 0
+function searchCutOffPoint(text: string, number: number) {
+    const positionOfTheCharacterToBeReplaced = text.indexOf(" ", initialPosition)
+    return positionOfTheCharacterToBeReplaced;
+}
+
 describe("Wrapper", () => {
     // ("", 4) -> ""
     it("does not process any text", () => {
